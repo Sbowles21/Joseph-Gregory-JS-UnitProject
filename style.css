@@ -46,3 +46,37 @@ button{
     z-index: 2;
     bottom: -30px;
 }
+
+.people {
+        background-size: 80%;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s
+    }
+
+.lathe {
+    background: url('lathe.png') bottom center no-repeat;
+    }
+
+.corey { 
+    background: url('Corey.jpg') bottom center no-repeat;
+}
+
+.fernae {
+    background: url('Fernae.jpg') bottom center no-repeat;
+}
+
+.nate {
+    background: url('Nate.png') bottom center no-repeat;
+}
+
+.kagan {
+    background: url('Kagan.png') bottom center no-repeat;
+}
+
+.door {
+    padding-bottom: 110px;
+    align-items: center;
+}
