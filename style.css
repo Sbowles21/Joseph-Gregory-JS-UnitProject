@@ -9,7 +9,7 @@ body{
     text-align: center;
     color:#404040;
 }
-button{
+#Start{
     width:75px;
     font-size: 25px;
     height: 45px;
@@ -17,7 +17,17 @@ button{
     background-color: #80dd8e;
     border-radius: 10px;
 }
-
+#Song{
+    width:83px;
+    height:48px;
+    background-color: #d0cbf1;
+}
+#topcorner{
+    position:absolute;
+    top:0;
+    right:0;
+    margin: 15px;
+   }
 .score {
     line-height: 1;
 }
