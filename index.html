@@ -5,11 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
     <title>Whack-A-Staff</title>
 </head>
 <body>
-    <h1>Whack-A-Staff</h1>
-    <h3>Your Score:<span id="score"> 0</span></h3>
-    <button onClick="startGame()">Start!</button>
+<h1>Whack-A-Staff</h1>
+<h3>Your Score:<span id="score"> 0</span></h3>
+<button onClick="startGame() setHalfVolume()" id="Start">  
+    <audio id="backgroundSong" src="Mega.mp3" autoplay></audio>
+        Start!
+</button>
+
+
+
+
+<script>
+    var bs = document.getElementById("backgroundSong");
+    bs.volume = 0.2;
+</script>
 </body>
 </html>
