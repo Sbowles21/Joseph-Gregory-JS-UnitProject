@@ -86,6 +86,10 @@ body{
     background: url('Kagan.png') bottom center no-repeat;
 }
 
+.matthew {
+    background: url('') bottom center no-repeat;
+}
+
 .door {
     padding-bottom: 110px;
     align-items: center;
