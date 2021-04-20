@@ -10,12 +10,13 @@ body{
     color:#404040;
 }
 #Start{
-    width:75px;
+    width:100px;
     font-size: 25px;
     height: 45px;
     color: #404040;
     background-color: #80dd8e;
-    border-radius: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 #Song{
     width:83px;
@@ -40,15 +41,17 @@ body{
     align-items: center;
 }
 
-.door {
+.hole {
     flex: 1 0 33.33%;
     overflow: hidden;
     position: relative;
+    padding-bottom: 110px;
+    align-items: center;
 }
 
-.door:after {
+.hole:after {
     display: block;
-    background: url(Door.png) bottom center no-repeat;
+    background: url(images/hole.jpg) bottom center no-repeat;
     background-size: contain;
     content: '';
     width: 100%;
@@ -89,9 +92,4 @@ body{
 
 .matthew {
     background: url('images/Matt.png') bottom center no-repeat;
-}
-
-.door {
-    padding-bottom: 110px;
-    align-items: center;
 }
