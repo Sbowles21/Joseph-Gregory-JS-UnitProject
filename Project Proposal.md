@@ -15,7 +15,7 @@ Greg will work on the HTML side and Joseph will work on the CSS side of the page
 Greg will work on the audio side of the page and Joseph will work on getting the animations for the characters to work properly.
 
 #### Thursday: Set up point system with interactions and make sure interaction audio works as well as when the music ends the game ends.
-Greg and Joseph will have to work together that day to get the point system to work with the interactions and their audio and when the music ends the game ends.
+Greg and Joseph will have to work together that day to get the point system to work with the interactions.
 
 #### Friday: Bug testing and finishing up on features.
 Greg and Joseph will work on finishing up any unfinished features and work on bug testing as well as README.md.
