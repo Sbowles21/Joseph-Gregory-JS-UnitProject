@@ -2,7 +2,7 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const people = document.querySelectorAll('.people');
 
-let lastHole;
+//let lastHole;
 let timeUp = false;
 let score = 0;
 
@@ -11,17 +11,16 @@ function randomTime() {
     let min = 1
     let max = 5
     var rand = Math.floor(Math.random() * (max - min + 1) + min);
-    console.log('Wait for ' + rand + ' seconds')
     setTimeout(randomTime, rand * 1000);
 }
 
 function randomHole() {
     const index = Math.floor(Math.random() * holes.length);
     const hole = holes[index];
-    if(hole == lastHole) {
-        return randomHole(holes)
-    }
-    lastHole = hole
+    // if(hole == lastHole) {
+    //     return randomHole(holes)
+    // }
+    //lastHole = hole
     return hole
 }
 
@@ -32,7 +31,7 @@ function peeping() {
     const hole = randomHole(holes);
     hole.classList.add('appear')
     setTimeout(() => {
-        hole.classList.remove('up'); // makes the person disappear from the hole after a random time has passed
+        hole.classList.remove('appear'); // makes the person disappear from the hole after a random time has passed
         if(!timeUp) {
             peeping();
         }
@@ -40,6 +39,8 @@ function peeping() {
 }
 
 randomTime()
+
+function bonk()
 
 // MUSIC TOGGLE
 var backSong = document.getElementById("backgroundSong");
