@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
     <title>Whack-A-Staff</title>
   </head>
   <body>
@@ -63,36 +63,5 @@
         <div class="people"></div>
       </div>
     </div>
-    <script>
-            var backSong = document.getElementById("backgroundSong");
-            backSong.volume = 0.1;
-            function toggleSong() {
-              if (backSong.paused) {
-                backSong.play();
-              } else {
-                backSong.pause();
-              }
-            }
-            let peoples = {
-              Corey: 3,
-              Kagan: 5,
-              Nate: 1,
-              Lathe: Math.floor(Math.random() * 10 + 1),
-              Matthew: -Math.floor(Math.random() * 10 + 1),
-              Fernae: -2,
-            };
-          
-          document.getElementById('addScore').onclick=function(){
-          var score = parseInt(document.getElementById("score").innerHTML);
-          let maths = Math.floor(Math.random() * 5);
-          var newScore = Object.values(peoples)[maths];
-          score += newScore;
-          if (score < 0){
-            score = 0
-          }
-          document.getElementById("score").innerHTML = score;
-          
-      }
-    </script>
   </body>
 </html>

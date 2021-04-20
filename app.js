@@ -15,3 +15,36 @@ function randomTime() {
 }
 
 randomTime()
+
+// MUSIC TOGGLE
+var backSong = document.getElementById("backgroundSong");
+backSong.volume = 0.1;
+function toggleSong() {
+  if (backSong.paused) {
+    backSong.play();
+  } else {
+    backSong.pause();
+  }
+}
+
+//POINTS
+let peoples = {
+  Corey: 3,
+  Kagan: 5,
+  Nate: 1,
+  Lathe: Math.floor(Math.random() * 10 + 1),
+  Matthew: -Math.floor(Math.random() * 10 + 1),
+  Fernae: -2,
+};
+
+document.getElementById('addScore').onclick=function(){
+var score = parseInt(document.getElementById("score").innerHTML);
+let maths = Math.floor(Math.random() * 5);
+var newScore = Object.values(peoples)[maths];
+score += newScore;
+if (score < 0){
+score = 0
+}
+document.getElementById("score").innerHTML = score;
+
+}
