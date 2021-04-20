@@ -48,7 +48,7 @@ body{
 
 .door:after {
     display: block;
-    background: url(Door.png) bottom center no-repeat;
+    background: url(images/Door.png) bottom center no-repeat;
     background-size: contain;
     content: '';
     width: 100%;

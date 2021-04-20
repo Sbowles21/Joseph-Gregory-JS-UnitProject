@@ -10,15 +10,21 @@
   </head>
   <body>
     <!-- ALL AUDIO NEEDS TO GO HERE -->
-    <audio id="backgroundSong" src="sounds/adventLofi.mp3" autoplay loop></audio>
+    <audio
+      id="backgroundSong"
+      src="sounds/adventLofi.mp3"
+      autoplay
+      loop
+    ></audio>
     <!-- END OF AUDIO -->
     <!-- TOP OF THE PAGE -->
     <h1>Whack-A-Staff</h1>
     <div id="topcorner">
       <button onClick="toggleSong()" id="Song">Toggle Background Song</button>
     </div>
-    <h3>Your Score:<span id="score"> 0</span></h3>
+    <h3>Your Score:<span id="score">0</span></h3>
     <button onClick="startGame()" id="Start">Start!</button>
+    <button id = "addScore">Add points</button>
 
     <div class="game">
       <div class="door door1">
@@ -58,14 +64,29 @@
       </div>
     </div>
     <script>
-      var backSong = document.getElementById("backgroundSong");
-      backSong.volume = 0.1;
-      function toggleSong() {
-        if (backSong.paused) {
-          backSong.play();
-        } else {
-          backSong.pause();
-        }
+            var backSong = document.getElementById("backgroundSong");
+            backSong.volume = 0.1;
+            function toggleSong() {
+              if (backSong.paused) {
+                backSong.play();
+              } else {
+                backSong.pause();
+              }
+            }
+            let peoples = {
+              Corey: 3,
+              Kagan: 5,
+              Nate: 1,
+              Lathe: Math.floor(Math.random() * 10 + 1),
+              Matthew: -Math.floor(Math.random() * 10 + 1),
+              Fernae: -2,
+            };
+          document.getElementById('addScore').onclick=function(){
+          var score = parseInt(document.getElementById("score").innerHTML);
+          let maths = Math.floor(Math.random() * 5);
+          var newScore = Object.values(peoples)[maths];
+          score += newScore;
+          document.getElementById("score").innerHTML = score;
       }
     </script>
   </body>
