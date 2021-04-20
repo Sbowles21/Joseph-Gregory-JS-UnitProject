@@ -68,27 +68,27 @@ body{
     }
 
 .lathe {
-    background: url('lathe.png') bottom center no-repeat;
+    background: url('images/lathe.png') bottom center no-repeat;
     }
 
 .corey { 
-    background: url('Corey.jpg') bottom center no-repeat;
+    background: url('images/Corey.png') bottom center no-repeat;
 }
 
 .fernae {
-    background: url('Fernae.jpg') bottom center no-repeat;
+    background: url('images/Fernae.png') bottom center no-repeat;
 }
 
 .nate {
-    background: url('Nate.png') bottom center no-repeat;
+    background: url('images/Nate.png') bottom center no-repeat;
 }
 
 .kagan {
-    background: url('Kagan.png') bottom center no-repeat;
+    background: url('images/Kagan.png') bottom center no-repeat;
 }
 
 .matthew {
-    background: url('') bottom center no-repeat;
+    background: url('images/Matt.png') bottom center no-repeat;
 }
 
 .door {
