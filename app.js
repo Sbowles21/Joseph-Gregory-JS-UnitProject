@@ -59,14 +59,14 @@ function toggleSong() {
 
 //POINTS
 let peoples = {
-  Corey: -3,
-  Nate: -1,
-  Lathe: Math.floor(Math.random() * 10 + 1),
-  Matthew: -Math.floor(Math.random() * 10 + 1),
-  Fernae: -2,
-  Bee: 1,
-  Lucas: 5,
-  newBug1: 3,
+  corey: -3,
+  nate: -1,
+  lathe: Math.floor(Math.random() * 10 + 1),
+  matthew: -Math.floor(Math.random() * 10 + 1),
+  fernae: -2,
+  bee: 1,
+  lucas: 5,
+  bugBoi: 3,
   chicken: Math.floor(Math.random() * 10 + 1),
 };
 
@@ -93,13 +93,18 @@ function startGame() {
 //   let score = 0;
 
   // function to make the person appear in a hole in a random amount of time
+
+
   function randomTime() {
     let min = 1;
     let max = 5;
     let rand = Math.floor(Math.random() * (max - min + 1) + min);
     console.log('Wait for ' + rand + ' seconds')
     holeTimeLoop = setTimeout(randomTime, rand * 1000);
+    randomPersonSpot(randomHole())
   }
+
+
 
   function randomHole() {
     const index = Math.floor(Math.random() * holes.length);
@@ -111,14 +116,16 @@ function startGame() {
     return hole;
   }
 
+
+
   function peeping() {
     // random time on how long a person should peep for
-    const time = randomTime(250, 500);
+    const time = randomTime(500, 1000);
     // gets a random hole
     const hole = randomHole(holes);
-    hole.classList.add("appear");
+    hole.classList.add("up");
     setTimeout(() => {
-      hole.classList.remove("appear"); // makes the person disappear from the hole after a random time has passed
+      hole.classList.remove("up"); // makes the person disappear from the hole after a random time has passed
       if (!timeUp) {
         peeping();
       }
@@ -126,6 +133,18 @@ function startGame() {
   }
 
   randomTime();
+
+
+function Bonk(event){
+    if(!event.isTrusted)  return;
+    score+= event.target.dataset.score; //Add event.target to this
+    this.parentNode.classList.remove('up') //refers to the item that is clicked
+    scoreBoard.textContent = score;
+}
+people.forEach(people => people.addEventListener("click", bool))
+
+
+
 
   let seconds = document.getElementById("countdown").textContent;
   if (seconds <= 1) {
@@ -144,6 +163,21 @@ function startGame() {
       if (seconds <= 0) clearInterval(countdown);
     }, 1000);
   }
-  
+
+
+
+  function randomPersonSpot(element){
+    let wewo = ["lathe","corey","fernae","nate","matthew","bee","chicken","luc","bugBoi"];
+    let In =  Math.floor(Math.random() * 8);
+    element.classList.add(wewo[In]);
+  }
 }
+
+
+
+ //CURSOR
+ function hugeBonk(){
+  document.getElementById("holes").style.cursor = "images/bonk_Hammer.png";
+ }
+
 
