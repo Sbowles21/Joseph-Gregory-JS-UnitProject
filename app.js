@@ -1,7 +1,3 @@
-const holes = document.querySelectorAll('.hole');
-const scoreBoard = document.querySelector('.score');
-const people = document.querySelectorAll('.people');
-
 //let lastHole;
 let timeUp = false;
 let score = 0;
@@ -36,13 +32,14 @@ function peeping() {
             peeping();
         }
     }, time);
+    // Add data set 
 }
 
 randomTime()
 
 function bonk(event) {
     if(!event.isTrusted) return;
-    score+= peoples; //Add event.target to this
+    score+= event.target.dataset.score; //Add event.target to this
     this.parentNode.classList.remove('up') //refers to the item that is clicked
     scoreBoard.textContent = score;
 }
