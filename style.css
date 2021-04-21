@@ -51,7 +51,7 @@ body{
 
 .hole:after {
     display: block;
-    background: url(images/hole.jpg) bottom center no-repeat;
+    background: url(images/newHole.png) bottom center no-repeat;
     background-size: contain;
     content: '';
     width: 100%;
