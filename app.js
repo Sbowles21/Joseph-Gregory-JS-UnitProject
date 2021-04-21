@@ -64,7 +64,7 @@ function toggleSong() {
 let peoples = {
   Corey: -3,
   Nate: -1,
-  Lathe: Math.floor(Math.random() * 10 + 1),
+  Lathe: -Math.floor(Math.random() * 10 + 1),
   Matthew: -Math.floor(Math.random() * 10 + 1),
   Fernae: -2,
 };
