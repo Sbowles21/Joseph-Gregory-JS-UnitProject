@@ -17,11 +17,13 @@ body{
     background-color: #80dd8e;
     justify-content: center;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 #Song{
     width:83px;
     height:48px;
     background-color: #d0cbf1;
+    cursor: pointer;
 }
 #topcorner{
     position:absolute;
@@ -32,7 +34,14 @@ body{
 .score {
     line-height: 1;
 }
-
+#score_area{
+    margin-top: 0px;
+    font-size: 25px;
+}
+#newCount{
+    margin-top: 0px;
+    font-size: 25px;
+}
 .game {
     width: 100%;
     height: 200px;
@@ -47,18 +56,19 @@ body{
     position: relative;
     padding-bottom: 100px;
     align-items: center;
+    height: 125px;
+    cursor: crosshair;
 }
 
 .hole:after {
     display: block;
-    background: url(images/newHole.png) bottom center no-repeat;
+    background: url(images/newHole.png) center no-repeat;
     background-size: contain;
     content: '';
     width: 100%;
-    height: 100px;
+    height: 150px;
     position: absolute;
     z-index: 2;
-    bottom: -30px;
 }
 
 .people {
