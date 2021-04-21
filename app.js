@@ -26,12 +26,12 @@ function randomHole() {
 
 function peeping() {
     // random time on how long a person should peep for
-    const time = randomTime(250, 500);
+    const time = randomTime(500, 1000);
     // gets a random hole
     const hole = randomHole(holes);
-    hole.classList.add('appear')
+    hole.classList.add('up')
     setTimeout(() => {
-        hole.classList.remove('appear'); // makes the person disappear from the hole after a random time has passed
+        hole.classList.remove('up'); // makes the person disappear from the hole after a random time has passed
         if(!timeUp) {
             peeping();
         }
@@ -40,7 +40,14 @@ function peeping() {
 
 randomTime()
 
-function bonk()
+function bonk(event) {
+    if(!event.isTrusted) return;
+    score+= peoples; //Add event.target to this
+    this.parentNode.classList.remove('up') //refers to the item that is clicked
+    scoreBoard.textContent = score;
+}
+
+people.forEach(people => people.addEventListener('click', bonk))
 
 // MUSIC TOGGLE
 var backSong = document.getElementById("backgroundSong");
@@ -55,9 +62,8 @@ function toggleSong() {
 
 //POINTS
 let peoples = {
-  Corey: 3,
-  Kagan: 5,
-  Nate: 1,
+  Corey: -3,
+  Nate: -1,
   Lathe: Math.floor(Math.random() * 10 + 1),
   Matthew: -Math.floor(Math.random() * 10 + 1),
   Fernae: -2,
