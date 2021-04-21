@@ -64,11 +64,15 @@ let peoples = {
   Lathe: Math.floor(Math.random() * 10 + 1),
   Matthew: -Math.floor(Math.random() * 10 + 1),
   Fernae: -2,
+  Bee: 1,
+  Lucas: 5,
+  newBug1: 3,
+  chicken: Math.floor(Math.random() * 10 + 1),
 };
 
 document.getElementById("addScore").onclick = function () {
   let score = parseInt(document.getElementById("score").innerHTML);
-  let maths = Math.floor(Math.random() * 5);
+  let maths = Math.floor(Math.random() * 8);
   let newScore = Object.values(peoples)[maths];
   score += newScore;
   if (score < 0) {
