@@ -8,6 +8,7 @@ html{
 body{
     text-align: center;
     color:#404040;
+    margin: 0px;
 }
 #Start{
     width:100px;
@@ -29,7 +30,7 @@ body{
     position:absolute;
     top:0;
     right:0;
-    margin: 15px;
+    margin: 10px;
    }
 .score {
     line-height: 1;
@@ -56,10 +57,10 @@ body{
     position: relative;
     padding-bottom: 100px;
     align-items: center;
-    height: 200px;
+    height: 20px;
     cursor: url("images/curse_Hammer.png"), auto;	
-    background: url(images/newHole.png) center no-repeat;
-    width:150px;
+    background: url("images/hole.png") center no-repeat;
+    width:20px;
 }
 /*
 .hole:after {
@@ -86,8 +87,8 @@ body{
 }
 
 img{
-    height: 100px;
-    width: 100px;
-    transform: translateY(110px);
+    height: 50px;
+    width: 50px;
+    transform: translateY(38px);
 
 }
