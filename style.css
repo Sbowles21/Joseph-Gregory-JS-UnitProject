@@ -56,21 +56,22 @@ body{
     position: relative;
     padding-bottom: 100px;
     align-items: center;
-    height: 125px;
+    height: 200px;
     cursor: url("images/curse_Hammer.png"), auto;	
+    background: url(images/newHole.png) center no-repeat;
+    width:150px;
 }
-
+/*
 .hole:after {
     display: block;
-    background: url(images/newHole.png) center no-repeat;
+    background-image: url(images/newHole.png) center no-repeat;
     background-size: contain;
     content: '';
     width: 100%;
     height: 150px;
     position: absolute;
-    z-index: 2;
-}
-
+}*/
+/* 
 .people {
         background-size: 80%;
         position: absolute;
@@ -78,40 +79,15 @@ body{
         width: 3000px;
         height: 100%;
         transition: all 0.5s
-    }
+    }*/
 
 .hole.up .people {
     top:0;
 }
 
-.lathe {
-    background: url('images/lathe.png') bottom center no-repeat;
-    }
+img{
+    height: 100px;
+    width: 100px;
+    transform: translateY(110px);
 
-.corey { 
-    background: url('images/Corey.png') bottom center no-repeat;
-}
-
-.fernae {
-    background: url('images/Fernae.png') bottom center no-repeat;
-}
-
-.nate {
-    background: url('images/Nate.png') bottom center no-repeat;
-}
-
-.matthew {
-    background: url('images/Matt.png') bottom center no-repeat;
-}
-.bee{
-    background: url('images/Bee.png') bottom center no-repeat;
-}
-.chicken{
-    background: url('images/Chicken.png') bottom center no-repeat;
-}
-.luc{
-    background: url('images/Luc.png') bottom center no-repeat;
-}
-.bugBoi{
-    background: url('images/bugBoi.png') bottom center no-repeat;
 }

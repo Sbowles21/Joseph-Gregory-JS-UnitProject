@@ -90,6 +90,7 @@ function bonk(event){
     score+= event.target.dataset.score; 
     this.parentNode.classList.remove('up') //refers to the item that is clicked
     scoreBoard.textContent = score;
+    document.getElementById("score").innerHTML = score;
 }
 people.forEach(people => people.addEventListener("click", bonk)) //people does not exist anymore
 
@@ -121,6 +122,7 @@ people.forEach(people => people.addEventListener("click", bonk)) //people does n
     let In =  Math.floor(Math.random() * 8);
     let ids = ["img1","img2","img3","img4","img5","img6","img7","img8","img9"]
     document.getElementById(ids[Math.floor(Math.random() * 9)]).src = peoplesImages[In]
+    
   }
 }
 
