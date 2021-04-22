@@ -120,9 +120,10 @@ people.forEach(people => people.addEventListener("click", bonk))
 
 
   function randomPersonSpot(element){
-    let characterList = ["lathe","corey","fernae","nate","matthew","bee","chicken","luc","bugBoi"];
-    let In = Math.floor(Math.random() * 8);
-    element.classList.add(characterList[In]);
+    let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","images/nate.png","images/matthew.png","images/bee.png","images/chicken.png","images/luc.png","images/bugBoi.png"];
+    let In =  Math.floor(Math.random() * 8);
+    let ids = ["img1","img2","img3","img4","img5","img6","img7","img8","img9"]
+    document.getElementById(ids[Math.floor(Math.random() * 8)]).src = peoplesImages[In]
   }
 }
 
