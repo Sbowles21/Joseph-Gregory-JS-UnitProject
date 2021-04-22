@@ -54,7 +54,6 @@ function startGame() {
     console.log('Wait for ' + rand + ' seconds')
     holeTimeLoop = setTimeout(randomTime, rand * 1000);
     randomPersonSpot(randomHole())
-
   }
 
 
@@ -71,7 +70,7 @@ function startGame() {
 
 
 
-  function peeping() {
+  function peeping(name) {
     // random time on how long a person should peep for
     const time = randomTime(500, 1000);
     // gets a random hole
@@ -80,13 +79,14 @@ function startGame() {
     setTimeout(() => {
       hole.classList.remove("up"); // makes the person disappear from the hole after a random time has passed
       if (!timeUp) {
-        peeping();
+        peeping(name);
       }
     }, time);
+    hole.dataset.score = peoples[name]
   }
 
   randomTime();
-
+  setInterval(peeping, 1000)
 
 function bonk(event){
     if(!event.isTrusted)  return;
@@ -120,9 +120,9 @@ people.forEach(people => people.addEventListener("click", bonk))
 
 
   function randomPersonSpot(element){
-    let wewo = ["lathe","corey","fernae","nate","matthew","bee","chicken","luc","bugBoi"];
-    let In =  Math.floor(Math.random() * 8);
-    element.classList.add(wewo[In]);
+    let characterList = ["lathe","corey","fernae","nate","matthew","bee","chicken","luc","bugBoi"];
+    let In = Math.floor(Math.random() * 8);
+    element.classList.add(characterList[In]);
   }
 }
 
