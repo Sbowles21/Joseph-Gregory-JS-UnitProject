@@ -35,6 +35,7 @@ document.getElementById("addScore").onclick = function () {
 
 // COUNTER
 function startGame() {
+  document.getElementById("Start").disabled = true
   const holes = document.querySelectorAll(".hole");
   const scoreBoard = document.querySelector(".score");
   const people = document.querySelectorAll(".people");
@@ -98,6 +99,7 @@ people.forEach(people => people.addEventListener("click", bonk)) //people does n
 
 
   let seconds = document.getElementById("countdown").textContent;
+  let altseconds =  document.getElementById("countdown").textContent;
   if (seconds <= 1) {
     document.getElementById("countdown").textContent = 0;
   } else {
@@ -110,6 +112,17 @@ people.forEach(people => people.addEventListener("click", bonk)) //people does n
       console.log(seconds)
       if (seconds == 0){
         clearInterval(holeTimeLoop)
+        document.getElementById("Start").disabled = false
+        document.getElementById("countdown").textContent = altseconds;
+        document.getElementById("img1").src = "images/download.png"
+        document.getElementById("img2").src = "images/download.png"
+        document.getElementById("img3").src = "images/download.png"
+        document.getElementById("img4").src = "images/download.png"
+        document.getElementById("img5").src = "images/download.png"
+        document.getElementById("img6").src = "images/download.png"
+        document.getElementById("img7").src = "images/download.png"
+        document.getElementById("img8").src = "images/download.png"
+        document.getElementById("img9").src = "images/download.png"
       }
       if (seconds <= 0) clearInterval(countdown);
     }, 1000);
@@ -118,7 +131,7 @@ people.forEach(people => people.addEventListener("click", bonk)) //people does n
 
 
   function randomPersonSpot(element){
-    let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","images/nate.png","images/Matt.png","images/bee.png","images/chicken.png","images/luc.png","images/bugBoi.png"];
+    let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","images/nate.png","images/Matt.png","images/bee.png","images/chicken.png","images/luc.png"];
     let In =  Math.floor(Math.random() * 8);
     let ids = ["img1","img2","img3","img4","img5","img6","img7","img8","img9"]
     document.getElementById(ids[Math.floor(Math.random() * 9)]).src = peoplesImages[In]
