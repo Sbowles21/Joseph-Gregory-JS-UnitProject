@@ -47,18 +47,20 @@ function bonk(event){
     newScore = peeping("nate")
   } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Matt.png") {
     newScore = peeping("matthew")
-  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Bee.png") {
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/bee.png") {
     newScore = peeping("bee")
   } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/corey.png") {
     newScore = peeping("corey")
   } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/lathe.png") {
     newScore = peeping("lathe")
-  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Fernae.png") {
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/fernae.png") {
     newScore = peeping("fernae")
-  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Luc.png") {
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/luc.png") {
     newScore = peeping("lucas")
-  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Chicken.png") {
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/chicken.png") {
     newScore = peeping("chicken")
+  }else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/dark.png"){
+    newScore = peeping("dark")
   }
 
   if(!event.isTrusted) return ;
@@ -79,18 +81,19 @@ let peoples = {
   "bee": 1,
   "lucas": 5,
   "chicken": Math.floor(Math.random() * 10 + 1),
+  "dark": 0
 };
 
-document.getElementById("addScore").onclick = function () {
-  let score = parseInt(document.getElementById("score").innerHTML);
-  let maths = Math.floor(Math.random() * 8);
-  let newScore = Object.values(peoples)[maths];
-  score += newScore;
-  if (score < 0) {
-    score = 0;
-  }
-  document.getElementById("score").innerHTML = score;
-};
+// document.getElementById("addScore").onclick = function () {
+//   let score = parseInt(document.getElementById("score").innerHTML);
+//   let maths = Math.floor(Math.random() * 8);
+//   let newScore = Object.values(peoples)[maths];
+//   score += newScore;
+//   if (score < 0) {
+//     score = 0;
+//   }
+//   document.getElementById("score").innerHTML = score;
+// };
 
 // COUNTER
 function startGame() {
