@@ -48,11 +48,9 @@ function startGame() {
 
 
   function randomTime() {
-    let min = 1;
-    let max = 5;
-    let rand = Math.floor(Math.random() * (max - min + 1) + min);
+    let rand = Math.random()
     console.log('Wait for ' + rand + ' seconds')
-    holeTimeLoop = setTimeout(randomTime, rand * 1000);
+    holeTimeLoop = setTimeout(randomTime, rand * 5000);
     randomPersonSpot(randomHole())
   }
 
@@ -72,7 +70,6 @@ function startGame() {
 
   function peeping(name) {
     // random time on how long a person should peep for
-    const time = randomTime(500, 1000);
     // gets a random hole
     const hole = randomHole(holes);
     hole.classList.add("up");
@@ -85,8 +82,8 @@ function startGame() {
     hole.dataset.score = peoples[name]
   }
 
-  randomTime();
-  setInterval(peeping, 1000)
+  randomTime()
+  setInterval(peeping, 3000)
 
 function bonk(event){
     if(!event.isTrusted)  return;
