@@ -50,7 +50,7 @@ function startGame() {
   function randomTime() {
     let rand = Math.random()
     console.log('Wait for ' + rand + ' seconds')
-    holeTimeLoop = setTimeout(randomTime, rand * 5000);
+    holeTimeLoop = setTimeout(randomTime, rand * 2000);
     randomPersonSpot(randomHole())
   }
 
@@ -83,15 +83,15 @@ function startGame() {
   }
 
   randomTime()
-  setInterval(peeping, 3000)
+  setInterval(peeping, 2000)
 
 function bonk(event){
     if(!event.isTrusted)  return;
-    score+= event.target.dataset.score; //Add event.target to this
+    score+= event.target.dataset.score; 
     this.parentNode.classList.remove('up') //refers to the item that is clicked
     scoreBoard.textContent = score;
 }
-people.forEach(people => people.addEventListener("click", bonk))
+people.forEach(people => people.addEventListener("click", bonk)) //people does not exist anymore
 
 
 
