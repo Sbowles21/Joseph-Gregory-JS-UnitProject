@@ -48,6 +48,7 @@ document.getElementById("addScore").onclick = function () {
 
 // COUNTER
 function startGame() {
+  document.getElementById("Start").disabled = true
   const holes = document.querySelectorAll(".hole");
   const scoreBoard = document.querySelector(".score");
   const people = document.querySelectorAll(".people");
@@ -105,6 +106,7 @@ peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", b
 
 
   let seconds = document.getElementById("countdown").textContent;
+  let altseconds =  document.getElementById("countdown").textContent;
   if (seconds <= 1) {
     document.getElementById("countdown").textContent = 0;
   } else {
@@ -117,6 +119,17 @@ peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", b
       console.log(seconds)
       if (seconds == 0){
         clearInterval(holeTimeLoop)
+        document.getElementById("Start").disabled = false
+        document.getElementById("countdown").textContent = altseconds;
+        document.getElementById("img1").src = "images/download.png"
+        document.getElementById("img2").src = "images/download.png"
+        document.getElementById("img3").src = "images/download.png"
+        document.getElementById("img4").src = "images/download.png"
+        document.getElementById("img5").src = "images/download.png"
+        document.getElementById("img6").src = "images/download.png"
+        document.getElementById("img7").src = "images/download.png"
+        document.getElementById("img8").src = "images/download.png"
+        document.getElementById("img9").src = "images/download.png"
       }
       if (seconds <= 0) clearInterval(countdown);
     }, 1000);
