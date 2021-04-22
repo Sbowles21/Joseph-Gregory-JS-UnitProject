@@ -13,13 +13,60 @@ function toggleSong() {
   }
 }
 
+function randomHole() {
+  const index = Math.floor(Math.random() * holes.length);
+  const hole = holes[index];
+  // if(hole == lastHole) {
+  //     return randomHole(holes)
+  // }
+  //lastHole = hole
+  return hole;
+}
+
+function peeping(name) {
+  // random time on how long a person should peep for
+  // gets a random hole
+  const hole = randomHole(holes);
+  hole.classList.add("up");
+  hole.setAttribute('data-score', peoples[name])
+  const score = Number(hole.dataset.score)
+  return score
+  // setTimeout(() => {
+  //   hole.classList.remove("up"); // makes the person disappear from the hole after a random time has passed
+  //   if (!timeUp) {
+  //     peeping(name);
+  //   }
+  // }, 5000);
+}
+
 function bonk(event){
-  console.log(event.target.dataset.score)
-  if(!event.isTrusted) return;
-  score+= event.target.dataset.score; 
+  let score = Number(scoreBoard.innerHTML)
+  let newScore
+  console.log(event.target.firstElementChild.src)
+  if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/nate.png") {
+    newScore = peeping("nate")
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Matt.png") {
+    newScore = peeping("matthew")
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Bee.png") {
+    newScore = peeping("bee")
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/corey.png") {
+    newScore = peeping("corey")
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/lathe.png") {
+    newScore = peeping("lathe")
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Fernae.png") {
+    newScore = peeping("fernae")
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Luc.png") {
+    newScore = peeping("lucas")
+  } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Chicken.png") {
+    newScore = peeping("chicken")
+  }
+
+  if(!event.isTrusted) return ;
+  score += newScore
+
+
   event.target.parentNode.classList.remove('up') //refers to the item that is clicked
   scoreBoard.innerText = score;
-  document.getElementById("score").innerText = score;
 }
 
 //POINTS
@@ -31,7 +78,6 @@ let peoples = {
   "fernae": -2,
   "bee": 1,
   "lucas": 5,
-  "bugBoi": 3,
   "chicken": Math.floor(Math.random() * 10 + 1),
 };
 
@@ -81,24 +127,8 @@ function startGame() {
   }
 
 
-
-  function peeping(name) {
-    // random time on how long a person should peep for
-    // gets a random hole
-    const hole = randomHole(holes);
-    hole.classList.add("up");
-    console.log(name)
-    hole.setAttribute('data-score', peoples[name])
-    setTimeout(() => {
-      hole.classList.remove("up"); // makes the person disappear from the hole after a random time has passed
-      if (!timeUp) {
-        peeping(name);
-      }
-    }, 5000);
-  }
-
   randomTime()
-  setInterval(peeping(Object.keys(peoples)), 2000)
+  setInterval(peeping(), 2000)
 
 peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", bonk))
 
