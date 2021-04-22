@@ -1,3 +1,7 @@
+const holes = document.querySelectorAll(".hole");
+const scoreBoard = document.querySelector("#score");
+const people = document.querySelectorAll(".people");
+
 // MUSIC TOGGLE
 let backSong = document.getElementById("backgroundSong");
 backSong.volume = 0.1;
@@ -9,17 +13,26 @@ function toggleSong() {
   }
 }
 
+function bonk(event){
+  console.log(event.target.dataset.score)
+  if(!event.isTrusted) return;
+  score+= event.target.dataset.score; 
+  event.target.parentNode.classList.remove('up') //refers to the item that is clicked
+  scoreBoard.innerText = score;
+  document.getElementById("score").innerText = score;
+}
+
 //POINTS
 let peoples = {
-  corey: -3,
-  nate: -1,
-  lathe: Math.floor(Math.random() * 10 + 1),
-  matthew: -Math.floor(Math.random() * 10 + 1),
-  fernae: -2,
-  bee: 1,
-  lucas: 5,
-  bugBoi: 3,
-  chicken: Math.floor(Math.random() * 10 + 1),
+  "corey": -3,
+  "nate": -1,
+  "lathe": Math.floor(Math.random() * 10 + 1),
+  "matthew": -Math.floor(Math.random() * 10 + 1),
+  "fernae": -2,
+  "bee": 1,
+  "lucas": 5,
+  "bugBoi": 3,
+  "chicken": Math.floor(Math.random() * 10 + 1),
 };
 
 document.getElementById("addScore").onclick = function () {
@@ -73,26 +86,20 @@ function startGame() {
     // gets a random hole
     const hole = randomHole(holes);
     hole.classList.add("up");
+    console.log(name)
+    hole.setAttribute('data-score', peoples[name])
     setTimeout(() => {
       hole.classList.remove("up"); // makes the person disappear from the hole after a random time has passed
       if (!timeUp) {
         peeping(name);
       }
-    }, time);
-    hole.dataset.score = peoples[name]
+    }, 5000);
   }
 
   randomTime()
-  setInterval(peeping, 2000)
+  setInterval(peeping(Object.keys(peoples)), 2000)
 
-function bonk(event){
-    if(!event.isTrusted)  return;
-    score+= event.target.dataset.score; 
-    this.parentNode.classList.remove('up') //refers to the item that is clicked
-    scoreBoard.textContent = score;
-    document.getElementById("score").innerHTML = score;
-}
-people.forEach(people => people.addEventListener("click", bonk)) //people does not exist anymore
+peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", bonk))
 
 
 
@@ -117,7 +124,7 @@ people.forEach(people => people.addEventListener("click", bonk)) //people does n
 
 
 
-  function randomPersonSpot(element){
+  function randomPersonSpot(){
     let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","images/nate.png","images/Matt.png","images/bee.png","images/chicken.png","images/luc.png","images/bugBoi.png"];
     let In =  Math.floor(Math.random() * 8);
     let ids = ["img1","img2","img3","img4","img5","img6","img7","img8","img9"]
