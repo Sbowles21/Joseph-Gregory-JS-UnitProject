@@ -1,6 +1,7 @@
 const holes = document.querySelectorAll(".hole");
 const scoreBoard = document.querySelector("#score");
 const people = document.querySelectorAll(".people");
+let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","images/nate.png","images/Matt.png","images/bee.png","images/chicken.png","images/luc.png","images/bugBoi.png"];
 
 // MUSIC TOGGLE
 let backSong = document.getElementById("backgroundSong");
@@ -42,7 +43,6 @@ function peeping(name) {
 function bonk(event){
   let score = Number(scoreBoard.innerHTML)
   let newScore
-  console.log(event.target.firstElementChild.src)
   if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/nate.png") {
     newScore = peeping("nate")
   } else if (event.target.firstElementChild.src === "http://127.0.0.1:5500/images/Matt.png") {
@@ -133,7 +133,7 @@ function startGame() {
   randomTime()
   setInterval(peeping(), 2000)
 
-peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", bonk))
+//peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", bonk))
 
 
 
@@ -154,15 +154,15 @@ peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", b
         clearInterval(holeTimeLoop)
         document.getElementById("Start").disabled = false
         document.getElementById("countdown").textContent = altseconds;
-        document.getElementById("img1").src = "images/download.png"
-        document.getElementById("img2").src = "images/download.png"
-        document.getElementById("img3").src = "images/download.png"
-        document.getElementById("img4").src = "images/download.png"
-        document.getElementById("img5").src = "images/download.png"
-        document.getElementById("img6").src = "images/download.png"
-        document.getElementById("img7").src = "images/download.png"
-        document.getElementById("img8").src = "images/download.png"
-        document.getElementById("img9").src = "images/download.png"
+        document.getElementById("img1").src = "images/dark.png"
+        document.getElementById("img2").src = "images/dark.png"
+        document.getElementById("img3").src = "images/dark.png"
+        document.getElementById("img4").src = "images/dark.png"
+        document.getElementById("img5").src = "images/dark.png"
+        document.getElementById("img6").src = "images/dark.png"
+        document.getElementById("img7").src = "images/dark.png"
+        document.getElementById("img8").src = "images/dark.png"
+        document.getElementById("img9").src = "images/dark.png"
       }
       if (seconds <= 0) clearInterval(countdown);
     }, 1000);
@@ -171,7 +171,6 @@ peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", b
 
 
   function randomPersonSpot(){
-    let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","images/nate.png","images/Matt.png","images/bee.png","images/chicken.png","images/luc.png","images/bugBoi.png"];
     let In =  Math.floor(Math.random() * 8);
     let ids = ["img1","img2","img3","img4","img5","img6","img7","img8","img9"]
     document.getElementById(ids[Math.floor(Math.random() * 9)]).src = peoplesImages[In]
