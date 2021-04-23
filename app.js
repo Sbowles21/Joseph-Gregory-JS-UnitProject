@@ -56,7 +56,6 @@ function bonk(event){
   if (event.target.src === "http://127.0.0.1:5500/images/nate.png") {
     newScore = peeping("nate")
     randomChance = Math.random()
-    console.log(randomChance)
     if (randomChance <= 0.2) {
       ShEeEeShAudio.pause()
       ShEeEeShAudio.currentTime = 0
