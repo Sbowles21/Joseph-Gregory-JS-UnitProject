@@ -6,7 +6,7 @@ let mattAudio = new Audio("sounds/Pain.mp3")
 let latheAudio = new Audio("sounds/TacoBell.mp3")
 let nateAudio = new Audio("sounds/nateAudio.mp3")
 let ShEeEeShAudio = new Audio("sounds/ShEeEeSh.mp3")
-let coreyAudio = []
+let coreyAudio = new Audio("sounds/fernae.mp3")
 let fernaeAudio = new Audio("sounds/fernae.mp3")
 let bugAudio = new Audio("sounds/Bonk.mp3")
 let blankAudio = new Audio("sounds/nope.mp3")
@@ -77,9 +77,9 @@ function bonk(event){
     bugAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/corey.png") {
     newScore = peeping("corey")
-    //coreyAudio.pause()
-    //coreyAudio.currentTime = 0
-    //coreyAudio.play()
+    coreyAudio.pause()
+    coreyAudio.currentTime = 0
+    coreyAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/lathe.png") {
     newScore = peeping("lathe")
     latheAudio.pause()
