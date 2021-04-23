@@ -5,6 +5,7 @@ let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","
 let mattAudio = new Audio("sounds/Pain.mp3")
 let latheAudio = new Audio("sounds/TacoBell.mp3")
 let nateAudio = new Audio("sounds/nateAudio.mp3")
+let ShEeEeShAudio = new Audio("sounds/ShEeEeSh.mp3")
 let coreyAudio = []
 let fernaeAudio = new Audio("sounds/fernae.mp3")
 let bugAudio = new Audio("sounds/Bonk.mp3")
@@ -54,9 +55,17 @@ function bonk(event){
   console.log(event.target.src)
   if (event.target.src === "http://127.0.0.1:5500/images/nate.png") {
     newScore = peeping("nate")
-    nateAudio.pause()
-    nateAudio.currentTime = 0
-    nateAudio.play()
+    randomChance = Math.random()
+    console.log(randomChance)
+    if (randomChance <= 0.2) {
+      ShEeEeShAudio.pause()
+      ShEeEeShAudio.currentTime = 0
+      ShEeEeShAudio.play()
+    } else {
+      nateAudio.pause()
+      nateAudio.currentTime = 0
+      nateAudio.play()
+    }
   } else if (event.target.src === "http://127.0.0.1:5500/images/Matt.png") {
     newScore = peeping("matthew")
     mattAudio.pause()
@@ -118,12 +127,12 @@ function bonk(event){
 let peoples = {
   "corey": -3,
   "nate": -1,
-  "lathe": Math.floor(Math.random() * 10 + 1),
-  "matthew": -Math.floor(Math.random() * 10 + 1),
+  "lathe": Math.floor(Math.random() * 5 + 1),
+  "matthew": -Math.floor(Math.random() * 5 + 1),
   "fernae": -2,
   "bee": 1,
-  "lucas": 5,
-  "chicken": Math.floor(Math.random() * 10 + 1),
+  "lucas": 3,
+  "chicken": Math.floor(Math.random() * 5 + 1),
   "dark": 0
 };
 
