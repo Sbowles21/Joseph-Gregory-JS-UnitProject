@@ -118,11 +118,9 @@ let peoples = {
 function startGame() {
   document.getElementById("Start").disabled = true
   const holes = document.querySelectorAll(".hole");
-  const scoreBoard = document.querySelector(".score");
-  const people = document.querySelectorAll(".people");
+  document.getElementById("score").innerHTML = 0;
 
   //let lastHole;
-  let timeUp = false;
   let holeTimeLoop;
 //   let score = 0;
 
@@ -151,6 +149,7 @@ function startGame() {
 
   randomTime()
   setInterval(peeping(), 2000)
+  
 
 // peoplesImages.forEach(peoplesImages => peoplesImages.addEventListener("click", bonk))
 
