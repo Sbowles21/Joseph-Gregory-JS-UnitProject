@@ -50,38 +50,60 @@ function peeping(name) {
 function bonk(event){
   let score = Number(scoreBoard.innerHTML)
   let newScore = 0
+  
   console.log(event.target.src)
   if (event.target.src === "http://127.0.0.1:5500/images/nate.png") {
     newScore = peeping("nate")
+    nateAudio.pause()
+    nateAudio.currentTime = 0
     nateAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/Matt.png") {
     newScore = peeping("matthew")
+    mattAudio.pause()
+    mattAudio.currentTime = 0
     mattAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/bee.png") {
     newScore = peeping("bee")
+    bugAudio.pause()
+    bugAudio.currentTime = 0
     bugAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/corey.png") {
     newScore = peeping("corey")
+    //coreyAudio.pause()
+    //coreyAudio.currentTime = 0
     //coreyAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/lathe.png") {
     newScore = peeping("lathe")
+    latheAudio.pause()
+    latheAudio.currentTime = 0
     latheAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/fernae.png") {
     newScore = peeping("fernae")
+    fernaeAudio.pause()
+    fernaeAudio.currentTime = 0
     fernaeAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/luc.png") {
     newScore = peeping("lucas")
+    bugAudio.pause()
+    bugAudio.currentTime = 0
     bugAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/chicken.png") {
     newScore = peeping("chicken")
+    bugAudio.pause()
+    bugAudio.currentTime = 0
     bugAudio.play()
   }else if (event.target.src === "http://127.0.0.1:5500/images/dark.png"){
     newScore = peeping("dark")
+    blankAudio.pause()
+    blankAudio.currentTime = 0
     blankAudio.play()
   } 
 
   if(!event.isTrusted) return ;
   score += newScore
+  if (score < 0) {
+    score = 0
+  }
 
   
   event.target.parentNode.classList.remove('up') //refers to the item that is clicked
