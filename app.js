@@ -2,6 +2,12 @@ const holes = document.querySelectorAll(".hole");
 const scoreBoard = document.querySelector("#score");
 const people = document.querySelectorAll(".people");
 let peoplesImages = ["images/lathe.png","images/corey.png","images/fernae.png","images/nate.png","images/Matt.png","images/bee.png","images/chicken.png","images/luc.png","images/bugBoi.png"];
+let mattAudio = new Audio("sounds/Pain.mp3")
+let latheAudio = new Audio("sounds/TacoBell.mp3")
+let nateAudio = new Audio("sounds/nateAudio.mp3")
+let coreyAudio = []
+let fernaeAudio = []
+let bugAudio= new Audio("sounds/Bonk.mp3")
 
 // MUSIC TOGGLE
 let backSong = document.getElementById("backgroundSong");
@@ -46,20 +52,28 @@ function bonk(event){
   console.log(event.target.src)
   if (event.target.src === "http://127.0.0.1:5500/images/nate.png") {
     newScore = peeping("nate")
+    nateAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/Matt.png") {
     newScore = peeping("matthew")
+    mattAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/bee.png") {
     newScore = peeping("bee")
+    bugAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/corey.png") {
     newScore = peeping("corey")
+    coreyAudio,play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/lathe.png") {
     newScore = peeping("lathe")
+    latheAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/fernae.png") {
     newScore = peeping("fernae")
+    fernaeAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/luc.png") {
     newScore = peeping("lucas")
+    bugAudio.play()
   } else if (event.target.src === "http://127.0.0.1:5500/images/chicken.png") {
     newScore = peeping("chicken")
+    bugAudio.play()
   }else if (event.target.src === "http://127.0.0.1:5500/images/dark.png"){
     newScore = peeping("dark")
   } 
@@ -182,12 +196,3 @@ function startGame() {
     
   }
 }
-
-
-
- //CURSOR
- function hugeBonk(){
-  document.getElementById("holes").style.cursor = "images/bonk_Hammer.png";
- }
-
-
