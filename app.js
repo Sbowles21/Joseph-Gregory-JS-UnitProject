@@ -47,13 +47,11 @@ function peeping(name) {
   //   }
   // }, 5000);
 }
-
+let domain = window.location.href
 function bonk(event){
   let score = Number(scoreBoard.innerHTML)
   let newScore = 0
-  
-  console.log(event.target.src)
-  if (event.target.src === "http://127.0.0.1:5500/images/nate.png") {
+  if (event.target.src === `${domain}images/nate.png`) {
     newScore = peeping("nate")
     randomChance = Math.random()
     if (randomChance <= 0.2) {
@@ -65,42 +63,42 @@ function bonk(event){
       nateAudio.currentTime = 0
       nateAudio.play()
     }
-  } else if (event.target.src === "http://127.0.0.1:5500/images/Matt.png") {
+  } else if (event.target.src === `${domain}images/Matt.png`) {
     newScore = peeping("matthew")
     mattAudio.pause()
     mattAudio.currentTime = 0
     mattAudio.play()
-  } else if (event.target.src === "http://127.0.0.1:5500/images/bee.png") {
+  } else if (event.target.src === `${domain}images/bee.png`) {
     newScore = peeping("bee")
     bugAudio.pause()
     bugAudio.currentTime = 0
     bugAudio.play()
-  } else if (event.target.src === "http://127.0.0.1:5500/images/corey.png") {
+  } else if (event.target.src === `${domain}images/corey.png`) {
     newScore = peeping("corey")
     coreyAudio.pause()
     coreyAudio.currentTime = 0
     coreyAudio.play()
-  } else if (event.target.src === "http://127.0.0.1:5500/images/lathe.png") {
+  } else if (event.target.src === `${domain}images/lathe.png`) {
     newScore = peeping("lathe")
     latheAudio.pause()
     latheAudio.currentTime = 0
     latheAudio.play()
-  } else if (event.target.src === "http://127.0.0.1:5500/images/fernae.png") {
+  } else if (event.target.src === `${domain}images/fernae.png`) {
     newScore = peeping("fernae")
     fernaeAudio.pause()
     fernaeAudio.currentTime = 0
     fernaeAudio.play()
-  } else if (event.target.src === "http://127.0.0.1:5500/images/luc.png") {
+  } else if (event.target.src === `${domain}images/luc.png`) {
     newScore = peeping("lucas")
     bugAudio.pause()
     bugAudio.currentTime = 0
     bugAudio.play()
-  } else if (event.target.src === "http://127.0.0.1:5500/images/chicken.png") {
+  } else if (event.target.src === `${domain}images/chicken.png`) {
     newScore = peeping("chicken")
     bugAudio.pause()
     bugAudio.currentTime = 0
     bugAudio.play()
-  }else if (event.target.src === "http://127.0.0.1:5500/images/dark.png"){
+  }else if (event.target.src === `${domain}images/dark.png`){
     newScore = peeping("dark")
     blankAudio.pause()
     blankAudio.currentTime = 0
