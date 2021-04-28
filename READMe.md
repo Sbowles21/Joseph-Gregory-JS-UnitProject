@@ -1,4 +1,4 @@
-# Cards Clone
+# Whack-A-Bug
 ## Table of Contents
 * ##### General Info
 * ##### Technologies
